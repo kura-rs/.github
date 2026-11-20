@@ -2,9 +2,10 @@
 
 # 📦 kura-rs
 
-### Copy-paste Rust components, with evidence. ｜ 根拠つきの、コピペで使える Rust 部品。
+### Rewriting C and C++ in Rust, to end memory-safety bugs. ｜ C / C++ を Rust に書き換えて、メモリ脆弱性をなくす。
 
 ![Rust](https://img.shields.io/badge/language-Rust-b7410e?logo=rust&logoColor=white)
+![memory safety](https://img.shields.io/badge/goal-memory%20safety-critical)
 ![hand-written](https://img.shields.io/badge/code-hand--written-2ea44f)
 ![status](https://img.shields.io/badge/status-early-orange)
 
@@ -16,18 +17,20 @@
 
 ## What is kura-rs?
 
-A collection of small Rust components that you can copy into your own project. Each one is meant to come with **evidence**: differential tests against the original implementation, and benchmarks.
+A project to remove memory-safety vulnerabilities by rewriting widely used C and C++ libraries in Rust.
+
+Buffer overflows, use-after-free and similar bugs keep appearing in C and C++ code. Safe Rust rules out these classes of bugs at compile time, so we port the libraries themselves, one at a time, and show with **evidence** that each port behaves like the original.
 
 ## 🧪 Principles
 
 1. **Every line is written by a human.** No LLM-generated code.
 2. **Behaviour is checked against the original** with differential tests.
 3. **Speed claims come with benchmarks.**
-4. **Small and readable**, so you can review a component before you copy it.
+4. **As little `unsafe` as possible,** and readable enough to review.
 
-## 📚 Components
+## 📚 Ports
 
-| Component | What it is | Status |
+| Port | What it is | Status |
 | --- | --- | --- |
 | [cjson](https://github.com/kura-rs/cjson) | Unofficial Rust port of [DaveGamble/cJSON](https://github.com/DaveGamble/cJSON) | In progress |
 

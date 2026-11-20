@@ -2,9 +2,10 @@
 
 # 📦 kura-rs
 
-### 根拠つきの、コピペで使える Rust 部品。 ｜ Copy-paste Rust components, with evidence.
+### C / C++ を Rust に書き換えて、メモリ脆弱性をなくす。 ｜ Rewriting C and C++ in Rust, to end memory-safety bugs.
 
 ![Rust](https://img.shields.io/badge/language-Rust-b7410e?logo=rust&logoColor=white)
+![memory safety](https://img.shields.io/badge/goal-memory%20safety-critical)
 ![hand-written](https://img.shields.io/badge/code-hand--written-2ea44f)
 ![status](https://img.shields.io/badge/status-early-orange)
 
@@ -16,18 +17,20 @@
 
 ## kura-rs とは
 
-自分のプロジェクトにそのままコピーして使える、小さな Rust の部品集です。それぞれの部品に**根拠**を付けることを目指しています。根拠とは、元の実装と結果を比べる差分テストと、ベンチマークのことです。
+広く使われている C / C++ のライブラリを Rust に書き換えて、メモリ脆弱性をなくす活動です。
+
+バッファオーバーフローや解放後使用（use-after-free）といったバグは、C / C++ のコードで今も見つかり続けています。安全な Rust は、こうした種類のバグをコンパイルの時点で防ぎます。そこで、ライブラリそのものを 1 つずつ移植し、元の実装と同じ動きをすることを**根拠**つきで示します。
 
 ## 🧪 方針
 
 1. **すべての行を人が書きます。** LLM が生成したコードは入れません。
 2. **動作は元の実装と比べて確かめます。** 差分テストを使います。
 3. **速さを言うときはベンチマークを付けます。**
-4. **小さく、読みやすく。** コピーする前に中身を確かめられるようにします。
+4. **`unsafe` はできるだけ使いません。** 中身を確かめられるよう、読みやすく書きます。
 
-## 📚 部品
+## 📚 移植
 
-| 部品 | 内容 | 状態 |
+| 移植 | 内容 | 状態 |
 | --- | --- | --- |
 | [cjson](https://github.com/kura-rs/cjson) | [DaveGamble/cJSON](https://github.com/DaveGamble/cJSON) の非公式な Rust 移植 | 作成中 |
 
