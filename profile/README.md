@@ -26,7 +26,8 @@ Buffer overflows, use-after-free and similar bugs keep appearing in C and C++ co
 1. **Every line is written by a human.** No LLM-generated code.
 2. **Behaviour is checked against the original** with differential tests.
 3. **Speed claims come with benchmarks.**
-4. **As little `unsafe` as possible,** and readable enough to review.
+4. **As little `unsafe` as possible.**
+5. **Readable code,** so you can review a port before you use it.
 
 ## 📚 Ports
 
